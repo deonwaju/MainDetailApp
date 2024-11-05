@@ -1,5 +1,6 @@
 package com.deontch.core.network.di
 
+import com.deontch.core.network.ProductsAPIService
 import com.deontch.core.network.auth.AuthInterceptor
 import com.deontch.core.network.auth.BuildConfiguration
 import dagger.Module
@@ -71,9 +72,9 @@ object NetworkModule {
             .build()
     }
 
-//    @Provides
-//    @Singleton
-//    fun provideCatApi(retrofit: Retrofit): CatAPIService {
-//        return retrofit.create()
-//    }
+    @Provides
+    @Singleton
+    fun provideProductsApiService(retrofit: Retrofit): ProductsAPIService {
+        return retrofit.create()
+    }
 }
