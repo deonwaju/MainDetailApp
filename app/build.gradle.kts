@@ -32,12 +32,14 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("debug") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            buildConfigField("String", "BASE_URL", "\"https://cdn.develop.gymshark.com/\"")
+        }
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            buildConfigField("String", "BASE_URL", "\"https://cdn.develop.gymshark.com/\"")
         }
     }
     compileOptions {
@@ -80,6 +82,7 @@ dependencies {
 
     implementation(libs.compose.destinations.animations)
     implementation(libs.androidx.media3.session)
+    implementation(project(":core:network"))
     ksp(libs.compose.destinations.ksp)
 
     implementation(libs.android.material)
