@@ -23,3 +23,4 @@ rootProject.name = "MainDetailApp"
 include(":app")
 include(":core:common")
 include(":core:common-domain")
+include(":core:network")

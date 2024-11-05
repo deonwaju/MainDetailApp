@@ -1,0 +1,59 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.android.kotlin)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.parcelize)
+}
+
+apply {
+    from("$rootDir/base-module.gradle")
+}
+
+android {
+    namespace = "com.deontch.core.network"
+
+    compileSdk = AndroidCommonConfig.compileSDK
+
+    defaultConfig {
+        minSdk = AndroidCommonConfig.minSDK
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = AndroidCommonConfig.javaVersion
+        targetCompatibility = AndroidCommonConfig.javaVersion
+    }
+    kotlinOptions {
+        jvmTarget = AndroidCommonConfig.jvmTarget
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+dependencies {
+    implementation(project(":core:common"))
+
+    // Retrofit
+    implementation(libs.squareup.retrofit)
+    implementation(libs.squareup.okhttp)
+    implementation(libs.squareup.logging.interceptor)
+
+    // Chucker
+    debugImplementation(libs.chucker.debug)
+    releaseImplementation(libs.chucker.release)
+}
