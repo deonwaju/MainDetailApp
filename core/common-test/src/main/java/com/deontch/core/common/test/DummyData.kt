@@ -3,11 +3,11 @@ package com.deontch.core.common.test
 import com.deontch.core.modules.AvailableSize
 import com.deontch.core.modules.FeaturedMedia
 import com.deontch.core.modules.Media
-import com.deontch.core.modules.Products
+import com.deontch.core.modules.Product
 
 object DummyData {
 
-    fun getDummyProducts(): List<Products> {
+    fun getDummyProducts(): List<Product> {
         return listOf(
             getDummyProduct1(),
             getDummyProduct2(),
@@ -15,8 +15,8 @@ object DummyData {
         )
     }
 
-    private fun getDummyProduct1(): Products {
-        return Products(
+    private fun getDummyProduct1(): Product {
+        return Product(
             id = 1L,
             title = "Product 1",
             price = 1499, // 14.99 in cents
@@ -30,8 +30,8 @@ object DummyData {
         )
     }
 
-    private fun getDummyProduct2(): Products {
-        return Products(
+    private fun getDummyProduct2(): Product {
+        return Product(
             id = 2L,
             title = "Product 2",
             price = 2599, // 25.99 in cents
@@ -45,8 +45,8 @@ object DummyData {
         )
     }
 
-    private fun getDummyProduct3(): Products {
-        return Products(
+    private fun getDummyProduct3(): Product {
+        return Product(
             id = 3L,
             title = "Product 3",
             price = 1999, // 19.99 in cents

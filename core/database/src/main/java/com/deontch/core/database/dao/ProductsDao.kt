@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.deontch.core.database.model.ProductsEntity
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface ProductsDao {
@@ -29,10 +30,10 @@ interface ProductsDao {
     suspend fun deleteAllProducts()
 
     @Query("SELECT * FROM products")
-    suspend fun getAllProducts(): List<ProductsEntity>
+    fun getAllProducts(): Flow<List<ProductsEntity>>
 
     @Query("SELECT * FROM products WHERE id = :id")
-    suspend fun getProductById(id: Long): ProductsEntity?
+    fun getProductById(id: Long): Flow<ProductsEntity>
 
     @Query("SELECT * FROM products WHERE objectID = :objectID")
     suspend fun getProductByObjectID(objectID: String): ProductsEntity?

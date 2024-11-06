@@ -17,6 +17,5 @@ abstract class FlowUseCase<in Params, T> constructor(
     operator fun invoke(params: Params? = null): Flow<T> {
         return this.build(params)
             .flowOn(dispatcherProvider.io)
-
     }
 }

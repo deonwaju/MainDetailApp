@@ -1,6 +1,5 @@
 package com.deontch.core.database.model
 
-import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -23,5 +22,5 @@ data class ProductsEntity(
     @Embedded val featuredMedia: FeaturedMediaEntity,
     @TypeConverters(MediaEntityListConverter::class) val media: List<MediaEntity>,
     @TypeConverters(AvailableSizeEntityListConverter::class) val availableSizes: List<AvailableSizeEntity>,
-    @TypeConverters(StringListConverter::class) val sizeInStock: List<String>,
+    @TypeConverters(StringListConverter::class) val sizeInStock: List<String>?,
 )

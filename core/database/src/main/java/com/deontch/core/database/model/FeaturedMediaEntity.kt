@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "featured_media")
 data class FeaturedMediaEntity(
-    @PrimaryKey val id: Long,
+    @PrimaryKey val _id: Long,
     val adminGraphqlApiId: String,
     val createdAt: String,
     val height: Int,

@@ -11,7 +11,7 @@ data class JsonHit(
     val inStock: Boolean,
     val labels: Any,
     val media: List<JsonMedia>,
-    val sizeInStock: List<String>,
+    val sizeInStock: List<String>?,
     val sku: String,
     val title: String,
 )

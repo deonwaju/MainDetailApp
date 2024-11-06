@@ -1,5 +1,3 @@
-import java.util.Properties
-
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.application)
@@ -79,12 +77,19 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:common-domain"))
+    implementation(project(":core:models"))
+    implementation(project(":core:network"))
+    implementation(project(":core:preferences"))
+    implementation(project(":core:common-design-android"))
 
     implementation(libs.compose.destinations.animations)
     implementation(libs.androidx.media3.session)
-    implementation(project(":core:network"))
-    implementation(project(":core:common-domain"))
-    implementation(project(":core:preferences"))
+    implementation(project(":feature:products:products-data"))
+    implementation(project(":feature:products:products-details"))
+    implementation(project(":feature:products:products-domain"))
+    implementation(project(":feature:products:products-list"))
+    implementation(project(":feature:settings"))
     ksp(libs.compose.destinations.ksp)
 
     implementation(libs.android.material)
