@@ -84,6 +84,7 @@ dependencies {
     implementation(libs.androidx.media3.session)
     implementation(project(":core:network"))
     implementation(project(":core:common-domain"))
+    implementation(project(":core:preferences"))
     ksp(libs.compose.destinations.ksp)
 
     implementation(libs.android.material)
