@@ -4,12 +4,31 @@ import com.deontch.core.database.model.AvailableSizeEntity
 import com.deontch.core.database.model.FeaturedMediaEntity
 import com.deontch.core.database.model.MediaEntity
 import com.deontch.core.database.model.ProductsEntity
+import com.deontch.core.modules.AvailableSize
+import com.deontch.core.modules.FeaturedMedia
+import com.deontch.core.modules.Media
+import com.deontch.core.modules.Products
 import com.deontch.core.network.model.JsonAvailableSize
 import com.deontch.core.network.model.JsonFeaturedMedia
 import com.deontch.core.network.model.JsonHit
 import com.deontch.core.network.model.JsonMedia
 
 class ProductsMapper {
+
+    fun mapToUIModel(productsEntity: ProductsEntity): Products {
+        return Products(
+            id = productsEntity.id,
+            title = productsEntity.title,
+            price = productsEntity.price,
+            description = productsEntity.description,
+            inStock = productsEntity.inStock,
+            labels = productsEntity.labels,
+            sku = productsEntity.sku,
+            featuredMedia = mapFeaturedMedia(productsEntity.featuredMedia),
+            media = productsEntity.media.map { mapMedia(it) },
+            availableSizes = productsEntity.availableSizes.map { mapAvailableSize(it) }
+        )
+    }
 
     fun mapToEntity(jsonHit: JsonHit): ProductsEntity {
         return ProductsEntity(
@@ -29,6 +48,43 @@ class ProductsMapper {
         )
     }
 
+    private fun mapFeaturedMedia(featuredMediaEntity: FeaturedMediaEntity): FeaturedMedia {
+        return FeaturedMedia(
+            id = featuredMediaEntity.id,
+            adminGraphqlApiId = featuredMediaEntity.adminGraphqlApiId,
+            createdAt = featuredMediaEntity.createdAt,
+            height = featuredMediaEntity.height,
+            position = featuredMediaEntity.position,
+            productId = featuredMediaEntity.productId,
+            src = featuredMediaEntity.src,
+            updatedAt = featuredMediaEntity.updatedAt,
+            width = featuredMediaEntity.width
+        )
+    }
+
+    private fun mapMedia(mediaEntity: MediaEntity): Media {
+        return Media(
+            id = mediaEntity.id,
+            adminGraphqlApiId = mediaEntity.adminGraphqlApiId,
+            createdAt = mediaEntity.createdAt,
+            height = mediaEntity.height,
+            position = mediaEntity.position,
+            productId = mediaEntity.productId,
+            src = mediaEntity.src,
+            updatedAt = mediaEntity.updatedAt
+        )
+    }
+
+    private fun mapAvailableSize(availableSizeEntity: AvailableSizeEntity): AvailableSize {
+        return AvailableSize(
+            id = availableSizeEntity.id,
+            inStock = availableSizeEntity.inStock,
+            inventoryQuantity = availableSizeEntity.inventoryQuantity,
+            price = availableSizeEntity.price,
+            size = availableSizeEntity.size,
+            sku = availableSizeEntity.sku
+        )
+    }
     private fun mapLabels(labels: Any?): String? {
         return when (labels) {
             is String -> labels

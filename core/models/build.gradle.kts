@@ -3,8 +3,9 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.android.kotlin)
     alias(libs.plugins.kapt)
-    alias(libs.plugins.parcelize)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt.android)
+    alias(libs.plugins.parcelize)
 }
 
 apply {
@@ -12,43 +13,27 @@ apply {
 }
 
 android {
+    namespace = "com.deontch.core.modules"
     compileSdk = AndroidCommonConfig.compileSDK
 
     defaultConfig {
         minSdk = AndroidCommonConfig.minSDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     compileOptions {
         sourceCompatibility = AndroidCommonConfig.javaVersion
         targetCompatibility = AndroidCommonConfig.javaVersion
     }
+
     kotlinOptions {
         jvmTarget = AndroidCommonConfig.jvmTarget
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
-    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
-    namespace = "com.deontch.feature.products.data"
-}
-
-dependencies {
-    implementation(project(":core:database"))
-    implementation(project(":core:models"))
-    implementation(project(":core:network"))
-
-    testImplementation(libs.bundles.testing)
 }
