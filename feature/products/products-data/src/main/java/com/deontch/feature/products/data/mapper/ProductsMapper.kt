@@ -25,6 +25,7 @@ class ProductsMapper @Inject constructor() {
             inStock = productsEntity.inStock,
             labels = productsEntity.labels,
             sku = productsEntity.sku,
+            colour = productsEntity.colour,
             featuredMedia = mapFeaturedMedia(productsEntity.featuredMedia),
             media = productsEntity.media.map { mapMedia(it) },
             availableSizes = productsEntity.availableSizes.map { mapAvailableSize(it) }

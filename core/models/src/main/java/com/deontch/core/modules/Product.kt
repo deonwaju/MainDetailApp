@@ -11,6 +11,7 @@ data class Product(
     val description: String,
     val inStock: Boolean,
     val labels: String?,
+    val colour: String,
     val sku: String,
     val featuredMedia: FeaturedMedia,
     val media: List<Media>,
