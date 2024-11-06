@@ -28,7 +28,8 @@ class ProductsMapper @Inject constructor() {
             colour = productsEntity.colour,
             featuredMedia = mapFeaturedMedia(productsEntity.featuredMedia),
             media = productsEntity.media.map { mapMedia(it) },
-            availableSizes = productsEntity.availableSizes.map { mapAvailableSize(it) }
+            availableSizes = productsEntity.availableSizes.map { mapAvailableSize(it) },
+            sizeInStock = productsEntity.sizeInStock ?: emptyList()
         )
     }
 
@@ -87,6 +88,7 @@ class ProductsMapper @Inject constructor() {
             sku = availableSizeEntity.sku
         )
     }
+
     private fun mapLabels(labels: Any?): String? {
         return when (labels) {
             is String -> labels

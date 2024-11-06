@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="description">Description</string>
+
+    <string name="colors">Colours: %1$s</string>
+    <string name="labels">Labels: %1$s</string>
+    <string name="price">Price: %1$s</string>
+    <string name="sizes_in_stock">In Stock Sizes: %1$s</string>
+</resources>

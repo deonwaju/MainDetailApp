@@ -16,6 +16,7 @@ data class Product(
     val featuredMedia: FeaturedMedia,
     val media: List<Media>,
     val availableSizes: List<AvailableSize>,
+    val sizeInStock: List<String>,
 ) : Parcelable
 
 @Parcelize

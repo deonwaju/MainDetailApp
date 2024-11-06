@@ -41,3 +41,5 @@ fun Long.formatBinarySize(): String {
         else -> "Bigger than 1024 TB"
     }
 }
+
+fun Int.toMonetaryString(): String = "£$this"
