@@ -53,4 +53,5 @@ dependencies {
     implementation(project(":core:network"))
 
     testImplementation(libs.bundles.testing)
+    testImplementation(project(":core:common-test"))
 }
