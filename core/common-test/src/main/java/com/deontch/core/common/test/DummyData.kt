@@ -14,7 +14,6 @@ import com.deontch.core.network.model.JsonHit
 import com.deontch.core.network.model.JsonMedia
 
 object DummyData {
-    // Dummy JSON data representing a product from the API
     val jsonProduct = JsonHit(
         id = 2,
         objectID = "124",
@@ -55,7 +54,6 @@ object DummyData {
         title = "Product 2"
     )
 
-    // Entity data representation (similar to database model)
     val productEntity = ProductsEntity(
         id = 2,
         title = "Product 2",
@@ -66,27 +64,27 @@ object DummyData {
         sku = "SKU124",
         colour = "Blue",
         featuredMedia = FeaturedMediaEntity(
-            2,
-            "GraphqlId2",
-            "2024-02-01",
-            450,
-            2,
-            2,
-            "url2",
-            "2024-02-01",
-            350
+            _id = 2,
+            adminGraphqlApiId = "GraphqlId2",
+            createdAt = "2024-02-01",
+            height = 450,
+            position = 2,
+            productId = 2,
+            src = "url2",
+            updatedAt = "2024-02-01",
+            width = 350
         ),
         media = listOf(
             MediaEntity(
-                2,
-                "GraphqlId2",
-                "2024-02-01",
-                450,
-                2,
-                2,
-                "url2",
-                "2024-02-01",
-                350
+                id = 2,
+                adminGraphqlApiId = "GraphqlId2",
+                createdAt = "2024-02-01",
+                height = 450,
+                position = 2,
+                productId = 2,
+                src = "url2",
+                updatedAt = "2024-02-01",
+                width = 350
             )
         ),
         availableSizes = listOf(AvailableSizeEntity(2, true, 150, 600, "M", "SKU457")),
@@ -94,87 +92,56 @@ object DummyData {
         objectID = "124"
     )
 
-    // Function to return a list of products for testing
     fun getDummyProducts(): List<Product> {
         return listOf(
-            getDummyProduct1(),
-            getDummyProduct2()
+            getDummyProduct1()
         )
     }
 
-    // Individual dummy product
-    private fun getDummyProduct1(): Product {
-        return Product(
-            id = 1L,
-            title = "Product 1",
-            price = 1499, // 14.99 in cents
-            description = "This is the description for Product 1.",
-            inStock = true,
-            labels = "Sale, Popular",
-            sku = "PROD001",
-            featuredMedia = getDummyFeaturedMedia(101L),
-            media = listOf(getDummyMedia(201L), getDummyMedia(202L)),
-            availableSizes = listOf(getDummyAvailableSize("S"), getDummyAvailableSize("M")),
-            sizeInStock = listOf("S", "M"),
-            colour = "Black"
-        )
-    }
-
-    private fun getDummyProduct2(): Product {
+    fun getDummyProduct1(): Product {
         return Product(
             id = 2L,
             title = "Product 2",
-            price = 1299, // 12.99 in cents
-            description = "This is the description for Product 2.",
+            price = 1200,
+            description = "Another Product Description",
             inStock = false,
             labels = "Clearance, New",
-            sku = "PROD002",
-            featuredMedia = getDummyFeaturedMedia(102L),
-            media = listOf(getDummyMedia(203L), getDummyMedia(204L)),
-            availableSizes = listOf(getDummyAvailableSize("M"), getDummyAvailableSize("L")),
+            sku = "SKU124",
+            featuredMedia = FeaturedMedia(
+                id = 2L,
+                adminGraphqlApiId = "GraphqlId2",
+                createdAt = "2024-02-01",
+                height = 450,
+                position = 2,
+                productId = 2L,
+                src = "url2",
+                updatedAt = "2024-02-01",
+                width = 350
+            ),
+            media = listOf(
+                Media(
+                    id = 2L,
+                    adminGraphqlApiId = "GraphqlId2",
+                    createdAt = "2024-02-01",
+                    height = 450,
+                    position = 2,
+                    productId = 2L,
+                    src = "url2",
+                    updatedAt = "2024-02-01",
+                )
+            ),
+            availableSizes = listOf(
+                AvailableSize(
+                    id = 2L,
+                    inStock = true,
+                    inventoryQuantity = 150,
+                    price = 600,
+                    size = "M",
+                    sku = "SKU457"
+                )
+            ),
             sizeInStock = listOf("M", "L"),
             colour = "Blue"
-        )
-    }
-
-    // Helper function to create featured media
-    private fun getDummyFeaturedMedia(id: Long): FeaturedMedia {
-        return FeaturedMedia(
-            id = id,
-            adminGraphqlApiId = "admin_$id",
-            createdAt = "2024-11-01T12:00:00Z",
-            height = 500,
-            position = 1,
-            productId = id,
-            src = "https://example.com/media/featured-image-$id.jpg",
-            updatedAt = "2024-11-02T12:00:00Z",
-            width = 500
-        )
-    }
-
-    // Helper function to create media
-    private fun getDummyMedia(id: Long): Media {
-        return Media(
-            id = id,
-            adminGraphqlApiId = "media_$id",
-            createdAt = "2024-11-01T12:00:00Z",
-            height = 400,
-            position = 1,
-            productId = id,
-            src = "https://example.com/media/image-$id.jpg",
-            updatedAt = "2024-11-02T12:00:00Z"
-        )
-    }
-
-    // Helper function to create available sizes
-    private fun getDummyAvailableSize(size: String): AvailableSize {
-        return AvailableSize(
-            id = 301L,
-            inStock = true,
-            inventoryQuantity = 50,
-            price = 1999, // 19.99 in cents
-            size = size,
-            sku = "SIZE-$size"
         )
     }
 }

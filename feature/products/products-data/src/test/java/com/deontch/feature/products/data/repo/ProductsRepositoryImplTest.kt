@@ -42,7 +42,6 @@ class ProductsRepositoryImplTest {
             val dbProducts = DummyData.productEntity
             val uiProducts = DummyData.getDummyProducts()
 
-            // Define mock behavior
             every { productsDao.getAllProducts() } returns flowOf(listOf(dbProducts))
             coEvery { productsApi.getProducts() } returns JsonProductsResponse(listOf(DummyData.jsonProduct))
             coEvery { productsDao.insertProducts(any()) } returns Unit
@@ -62,9 +61,8 @@ class ProductsRepositoryImplTest {
         runTest {
             val productId = 1L
             val dbProducts = DummyData.productEntity
-            val uiProducts = DummyData.getDummyProducts()
+            val uiProducts = DummyData.getDummyProduct1()
 
-            // Define mock behavior
             every { productsDao.getProductById(productId) } returns flowOf(dbProducts)
 
             val result = repository.getProductDetailById(productId).first()
@@ -76,8 +74,9 @@ class ProductsRepositoryImplTest {
     fun `given products are fetched from API when getProducts is called, then products are inserted into the database`() =
         runTest {
             val apiProducts = DummyData.getDummyProducts()
+            val dbProducts = DummyData.productEntity
 
-            // Define mock behavior for API call
+            every { productsDao.getAllProducts() } returns flowOf(listOf(dbProducts))
             coEvery { productsApi.getProducts() } returns JsonProductsResponse(listOf(DummyData.jsonProduct))
             coEvery { productsDao.insertProducts(any()) } returns Unit
 
@@ -86,7 +85,6 @@ class ProductsRepositoryImplTest {
                 assertThat(it).isNotEmpty()
             }
 
-            // Verify that the products were inserted into the database
             coVerify { productsDao.insertProducts(any()) }
         }
 }
