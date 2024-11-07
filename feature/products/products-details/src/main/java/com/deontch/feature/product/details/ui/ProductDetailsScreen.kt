@@ -40,9 +40,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.deontch.common.design.components.HtmlText
 import com.deontch.common.design.components.LoadingScreen
 import com.deontch.common.design.components.SizeSelectionRow
+import com.deontch.common.design.components.annotatedString
 import com.deontch.core.common.util.toMonetaryString
 import com.deontch.core.modules.Media
 import com.deontch.feature.product.details.R
@@ -250,7 +250,7 @@ private fun ProductDetailRowItem(
 
         HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
 
-        HtmlText(html = content)
+        Text(text = annotatedString(content), style = MaterialTheme.typography.bodyLarge)
     }
 }
 
