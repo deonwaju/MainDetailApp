@@ -11,6 +11,7 @@ Just a brief description below:
 ## What should the UI look like? 🎨
 
 - Screen Recording
+  
 https://github.com/user-attachments/assets/98042613-c73b-49d9-a111-0130cac6eebb
 
 Search
