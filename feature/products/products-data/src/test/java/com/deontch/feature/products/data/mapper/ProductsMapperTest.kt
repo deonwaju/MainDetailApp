@@ -52,7 +52,7 @@ class ProductsMapperTest {
             assertThat(featuredMedia).isEqualTo(
                 jsonProduct.featuredMedia.let {
                     FeaturedMediaEntity(
-                        _id = it.id,
+                        mediaId = it.id,
                         adminGraphqlApiId = it.admin_graphql_api_id,
                         createdAt = it.created_at,
                         height = it.height,
@@ -98,7 +98,7 @@ class ProductsMapperTest {
     // Helper method to verify FeaturedMedia mapping
     private fun mapFeaturedMedia(featuredMediaEntity: FeaturedMediaEntity): FeaturedMedia {
         return FeaturedMedia(
-            id = featuredMediaEntity._id,
+            id = featuredMediaEntity.mediaId,
             adminGraphqlApiId = featuredMediaEntity.adminGraphqlApiId,
             createdAt = featuredMediaEntity.createdAt,
             height = featuredMediaEntity.height,

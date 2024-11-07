@@ -53,7 +53,7 @@ class ProductsMapper @Inject constructor() {
 
     private fun mapFeaturedMedia(featuredMediaEntity: FeaturedMediaEntity): FeaturedMedia {
         return FeaturedMedia(
-            id = featuredMediaEntity._id,
+            id = featuredMediaEntity.mediaId,
             adminGraphqlApiId = featuredMediaEntity.adminGraphqlApiId,
             createdAt = featuredMediaEntity.createdAt,
             height = featuredMediaEntity.height,
@@ -99,7 +99,7 @@ class ProductsMapper @Inject constructor() {
 
     private fun mapFeaturedMedia(jsonFeaturedMedia: JsonFeaturedMedia): FeaturedMediaEntity {
         return FeaturedMediaEntity(
-            _id = jsonFeaturedMedia.id,
+            mediaId = jsonFeaturedMedia.id,
             adminGraphqlApiId = jsonFeaturedMedia.admin_graphql_api_id,
             createdAt = jsonFeaturedMedia.created_at,
             height = jsonFeaturedMedia.height,

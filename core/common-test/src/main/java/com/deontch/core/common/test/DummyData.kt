@@ -64,7 +64,7 @@ object DummyData {
         sku = "SKU124",
         colour = "Blue",
         featuredMedia = FeaturedMediaEntity(
-            _id = 2,
+            mediaId = 2,
             adminGraphqlApiId = "GraphqlId2",
             createdAt = "2024-02-01",
             height = 450,

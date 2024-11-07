@@ -1,7 +1,7 @@
 import org.gradle.api.JavaVersion
 
 /**
- * A collection of configuration properties for Android modules.
+ * Configuration properties for Android modules.
  */
 object AndroidCommonConfig {
     const val minSDK = 26

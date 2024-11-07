@@ -14,7 +14,7 @@ apply {
 
 android {
     namespace = "com.deontch.maindetailapp"
-    compileSdk = 34
+    compileSdk = AndroidCommonConfig.compileSDK
 
     defaultConfig {
         applicationId = AndroidCommonConfig.applicationId
