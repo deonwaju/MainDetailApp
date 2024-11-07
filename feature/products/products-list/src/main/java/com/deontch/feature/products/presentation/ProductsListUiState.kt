@@ -1,4 +1,4 @@
-package com.deontch.feature.products
+package com.deontch.feature.products.presentation
 
 import androidx.compose.runtime.Immutable
 import com.deontch.core.modules.Product

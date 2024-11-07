@@ -49,7 +49,7 @@ import com.deontch.common.design.components.LoadingScreen
 import com.deontch.common.design.components.SizeSelectionRow
 import com.deontch.core.common.util.toMonetaryString
 import com.deontch.core.modules.Product
-import com.deontch.feature.products.ProductsListUiState
+import com.deontch.feature.products.presentation.ProductsListUiState
 import com.deontch.feature.products.nav.ProductsListNavigator
 import com.deontch.feature.products.presentation.ProductsListViewModel
 import com.ramcosta.composedestinations.annotation.Destination

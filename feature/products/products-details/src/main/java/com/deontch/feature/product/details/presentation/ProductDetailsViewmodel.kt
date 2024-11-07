@@ -2,7 +2,6 @@ package com.deontch.feature.product.details.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.deontch.core.modules.Product
 import com.deontch.feature.products.domain.usecases.GetProductDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,10 +24,4 @@ class ProductDetailsViewmodel @Inject constructor(
             }
         }
     }
-}
-
-sealed class ProductDetailsUiState {
-    object Idle : ProductDetailsUiState()
-    object Loading : ProductDetailsUiState()
-    data class Success(val data: Product) : ProductDetailsUiState()
 }

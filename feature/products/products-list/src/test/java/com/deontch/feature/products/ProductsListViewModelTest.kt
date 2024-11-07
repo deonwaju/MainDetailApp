@@ -4,15 +4,14 @@ import app.cash.turbine.test
 import com.deontch.core.common.test.DummyData
 import com.deontch.core.modules.Product
 import com.deontch.feature.products.domain.usecases.GetAllProductsListUseCase
+import com.deontch.feature.products.presentation.ProductsListUiState
 import com.deontch.feature.products.presentation.ProductsListViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
 import kotlinx.coroutines.test.setMain
