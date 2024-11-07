@@ -10,12 +10,25 @@ Just a brief description below:
 
 ## What should the UI look like? 🎨
 
-https://github.com/user-attachments/assets/c4d302d7-85a9-4402-8010-0c2665ca9c1f
+- Screen Recording
+https://github.com/user-attachments/assets/98042613-c73b-49d9-a111-0130cac6eebb
 
+Search
 
-https://github.com/user-attachments/assets/108b04f5-bbe0-4239-9317-61b64b13454b
+https://github.com/user-attachments/assets/b7062d5e-a264-440b-826a-216be6d29c12
 
+- Screenshots
+![Screenshot 2024-11-07 at 11 49 57](https://github.com/user-attachments/assets/267b33ab-3a6b-4213-92c2-4f47ec92dfd8)
 
+![Screenshot 2024-11-07 at 11 50 04](https://github.com/user-attachments/assets/f9e8eadb-b31a-467a-83df-ec918551d028)
+
+![Screenshot 2024-11-07 at 11 50 14](https://github.com/user-attachments/assets/8b11a8d6-09b1-4c52-a759-b4b56bbf9bd8)
+
+![Screenshot 2024-11-07 at 11 50 20](https://github.com/user-attachments/assets/a0014e7d-334d-494a-bd28-174c8bec8282)
+
+![Screenshot 2024-11-07 at 11 49 35](https://github.com/user-attachments/assets/e1df159f-e9af-4ae3-a43f-9f86da3361f0)
+
+![Screenshot 2024-11-07 at 11 49 44](https://github.com/user-attachments/assets/675e7f67-898a-408b-bfa5-854010e538e8)
 
 ## Features
 
