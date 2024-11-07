@@ -100,5 +100,21 @@ If save to favourite feature was part of the exercise, I would have implemented 
 - Add the ability to remove products from the favourites list.
 - Implement the necessary logic to handle removing products from the favourites list.
 
-### Also TO-DO
-- Complete Unit tests
+## Getting Started
+
+To run this project on your local machine:
+
+1. Clone the repository: `git clone <[repository-url](https://github.com/deonwaju/MainDetailApp/)>`
+2. Open the project in Android Studio.
+3. Sync the project with Gradle to resolve dependencies.
+4. Run the app on an emulator or Android device.
+
+---
+
+Thank you for checking out the **Product List App**! We hope you find this a useful example of a modern Android architecture built with MVVM, Clean Architecture, and Jetpack Compose.
+
+
+
+
+
+
