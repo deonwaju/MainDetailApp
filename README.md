@@ -99,6 +99,7 @@ If save to favourite feature was part of the exercise, I would have implemented 
 - Update the UI to display favourite products on the favourites screen.
 - Add the ability to remove products from the favourites list.
 - Implement the necessary logic to handle removing products from the favourites list.
+- Add analytics tracking.
 
 ## Getting Started
 
