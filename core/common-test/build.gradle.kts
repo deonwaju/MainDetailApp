@@ -50,4 +50,6 @@ dependencies {
     implementation(libs.bundles.testing)
     implementation(project(":core:common-domain"))
     implementation(project(":core:models"))
+    implementation(project(":core:database"))
+    implementation(project(":core:network"))
 }
