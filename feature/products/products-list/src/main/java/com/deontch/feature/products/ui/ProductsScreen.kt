@@ -331,8 +331,3 @@ fun ProductListView(
         }
     }
 }
-
-@Composable
-fun ErrorView(errorMessage: String) {
-    Text(text = "Error: $errorMessage", color = Color.Red)
-}
