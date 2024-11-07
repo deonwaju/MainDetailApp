@@ -46,6 +46,7 @@ import coil.request.ImageRequest
 import com.aliumujib.all.breeds.R
 import com.deontch.common.design.components.ErrorScreen
 import com.deontch.common.design.components.LoadingScreen
+import com.deontch.common.design.components.SizeSelectionRow
 import com.deontch.core.common.util.toMonetaryString
 import com.deontch.core.modules.Product
 import com.deontch.feature.products.ProductsListUiState
@@ -327,6 +328,7 @@ fun ProductListView(
                     text = product.price.toMonetaryString(),
                     style = MaterialTheme.typography.headlineSmall
                 )
+                SizeSelectionRow(sizes = product.sizeInStock.map { it.uppercase() })
             }
         }
     }

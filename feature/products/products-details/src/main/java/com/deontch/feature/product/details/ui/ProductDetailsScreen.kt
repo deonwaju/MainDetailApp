@@ -42,6 +42,7 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.deontch.common.design.components.HtmlText
 import com.deontch.common.design.components.LoadingScreen
+import com.deontch.common.design.components.SizeSelectionRow
 import com.deontch.core.common.util.toMonetaryString
 import com.deontch.core.modules.Media
 import com.deontch.feature.product.details.R
@@ -150,6 +151,10 @@ fun ProductsDetailsScreenContent(
                                     text = price.toMonetaryString(),
                                     style = MaterialTheme.typography.headlineSmall
                                 )
+                            }
+
+                            item {
+                                SizeSelectionRow(sizeInStock.map { it.uppercase() })
                             }
 
                             item {
