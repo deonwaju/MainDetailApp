@@ -2,13 +2,21 @@ package com.deontch.feature.products
 
 import app.cash.turbine.test
 import com.deontch.core.common.test.DummyData
+import com.deontch.core.modules.Product
 import com.deontch.feature.products.domain.usecases.GetAllProductsListUseCase
 import com.deontch.feature.products.presentation.ProductsListViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.setMain
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -18,11 +26,23 @@ class ProductsListViewModelTest {
 
     private lateinit var viewModel: ProductsListViewModel
     private val getProductsUseCase: GetAllProductsListUseCase = mockk()
+    private val testDispatcher = UnconfinedTestDispatcher()
 
-    private val sampleProducts = DummyData.getDummyProducts()
+    private val sampleProducts = listOf(
+        DummyData.getDummyProduct(),
+        DummyData.getDummyProduct1(),
+        DummyData.getDummyProduct2(),
+    )
+
     @Before
     fun setup() {
+        Dispatchers.setMain(testDispatcher)
         viewModel = ProductsListViewModel(getProductsUseCase)
+    }
+
+    @After
+    fun tearDown() {
+        Dispatchers.resetMain() // Reset to the original Main dispatcher
     }
 
     @Test
@@ -32,10 +52,11 @@ class ProductsListViewModelTest {
         viewModel.uiState.test {
             viewModel.getProducts()
 
+            assertEquals(ProductsListUiState.Initial, awaitItem())
             assertEquals(ProductsListUiState.Loading, awaitItem())
             assertEquals(ProductsListUiState.Success(sampleProducts), awaitItem())
         }
-        
+
         viewModel.filteredProducts.test {
             assertEquals(sampleProducts, awaitItem())
         }
@@ -49,6 +70,7 @@ class ProductsListViewModelTest {
         viewModel.uiState.test {
             viewModel.getProducts()
 
+            assertEquals(ProductsListUiState.Initial, awaitItem())
             assertEquals(ProductsListUiState.Loading, awaitItem())
             assertEquals(ProductsListUiState.Error(exceptionMessage), awaitItem())
         }
@@ -56,13 +78,23 @@ class ProductsListViewModelTest {
 
     @Test
     fun `onSearchQueryChanged filters products by title and colour`() = runTest {
-        // Assume that getProducts has been called and populated allProducts
         coEvery { getProductsUseCase() } returns flowOf(sampleProducts)
         viewModel.getProducts()
 
         viewModel.filteredProducts.test {
-            // Ignore initial item since it's already populated by getProducts
             skipItems(1)
+
+            viewModel.onSearchQueryChanged("Product 2")
+            assertEquals(
+                listOf(sampleProducts[1]),
+                awaitItem()
+            )
+
+            viewModel.onSearchQueryChanged("Product 4")
+            assertEquals(
+                listOf(sampleProducts[0]),
+                awaitItem()
+            )
 
             viewModel.onSearchQueryChanged("Product")
             assertEquals(
@@ -70,15 +102,9 @@ class ProductsListViewModelTest {
                 awaitItem()
             )
 
-            viewModel.onSearchQueryChanged("Two")
+            viewModel.onSearchQueryChanged("Nonexistent")
             assertEquals(
-                listOf(sampleProducts[1]),
-                awaitItem()
-            )
-
-            viewModel.onSearchQueryChanged("Red")
-            assertEquals(
-                listOf(sampleProducts[0]),
+                emptyList<Product>(),
                 awaitItem()
             )
         }

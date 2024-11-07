@@ -144,4 +144,96 @@ object DummyData {
             colour = "Blue"
         )
     }
+    fun getDummyProduct2(): Product {
+        return Product(
+            id = 2L,
+            title = "Product 3",
+            price = 1200,
+            description = "Another Product Description",
+            inStock = false,
+            labels = "Clearance, New",
+            sku = "SKU124",
+            featuredMedia = FeaturedMedia(
+                id = 2L,
+                adminGraphqlApiId = "GraphqlId2",
+                createdAt = "2024-02-01",
+                height = 450,
+                position = 2,
+                productId = 2L,
+                src = "url2",
+                updatedAt = "2024-02-01",
+                width = 350
+            ),
+            media = listOf(
+                Media(
+                    id = 2L,
+                    adminGraphqlApiId = "GraphqlId2",
+                    createdAt = "2024-02-01",
+                    height = 450,
+                    position = 2,
+                    productId = 2L,
+                    src = "url2",
+                    updatedAt = "2024-02-01",
+                )
+            ),
+            availableSizes = listOf(
+                AvailableSize(
+                    id = 2L,
+                    inStock = true,
+                    inventoryQuantity = 150,
+                    price = 600,
+                    size = "M",
+                    sku = "SKU457"
+                )
+            ),
+            sizeInStock = listOf("M", "L"),
+            colour = "Blue"
+        )
+    }
+    fun getDummyProduct(): Product {
+        return Product(
+            id = 2L,
+            title = "Product 4",
+            price = 1200,
+            description = "Another Product Description",
+            inStock = false,
+            labels = "Clearance, New",
+            sku = "SKU124",
+            featuredMedia = FeaturedMedia(
+                id = 2L,
+                adminGraphqlApiId = "GraphqlId2",
+                createdAt = "2024-02-01",
+                height = 450,
+                position = 2,
+                productId = 2L,
+                src = "url2",
+                updatedAt = "2024-02-01",
+                width = 350
+            ),
+            media = listOf(
+                Media(
+                    id = 2L,
+                    adminGraphqlApiId = "GraphqlId2",
+                    createdAt = "2024-02-01",
+                    height = 450,
+                    position = 2,
+                    productId = 2L,
+                    src = "url2",
+                    updatedAt = "2024-02-01",
+                )
+            ),
+            availableSizes = listOf(
+                AvailableSize(
+                    id = 2L,
+                    inStock = true,
+                    inventoryQuantity = 150,
+                    price = 600,
+                    size = "M",
+                    sku = "SKU457"
+                )
+            ),
+            sizeInStock = listOf("M", "L"),
+            colour = "Blue"
+        )
+    }
 }
