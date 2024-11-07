@@ -195,7 +195,6 @@ fun ProductsDetailsScreenContent(
             }
         }
     }
-    println("product detail State::::${uiState}")
 }
 
 @Composable
