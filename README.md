@@ -9,7 +9,9 @@ data from a repository and displays it in a list or grid view, with search funct
 Just a brief description below:
 
 ## What should the UI look like? 🎨
-[Screen Recording 2024-11-07 at 02.31.59.mov](..%2F..%2FDesktop%2FScreen%20Recording%202024-11-07%20at%2002.31.59.mov)
+[[Screen Recording 2024-11-07 at 02.31.59.mov](..%2F..%2FDesktop%2FScreen%20Recording%202024-11-07%20at%2002.31.59.mov)
+](https://github.com/user-attachments/assets/0044a20d-6f9a-473e-af73-962bc87fb188
+)
 
 ## Features
 
