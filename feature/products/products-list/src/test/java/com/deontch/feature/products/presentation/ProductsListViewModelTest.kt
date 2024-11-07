@@ -1,11 +1,9 @@
-package com.deontch.feature.products
+package com.deontch.feature.products.presentation
 
 import app.cash.turbine.test
 import com.deontch.core.common.test.DummyData
 import com.deontch.core.modules.Product
 import com.deontch.feature.products.domain.usecases.GetAllProductsListUseCase
-import com.deontch.feature.products.presentation.ProductsListUiState
-import com.deontch.feature.products.presentation.ProductsListViewModel
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers

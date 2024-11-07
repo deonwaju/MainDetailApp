@@ -4,7 +4,7 @@ import com.deontch.core.common.domain.utils.DispatcherProvider
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 
-abstract class FlowUseCase<in Params, T> constructor(
+abstract class FlowUseCase<in Params, T>(
     private val dispatcherProvider: DispatcherProvider,
 ) {
 
