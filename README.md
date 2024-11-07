@@ -104,7 +104,7 @@ If save to favourite feature was part of the exercise, I would have implemented 
 
 To run this project on your local machine:
 
-1. Clone the repository: `git clone <[repository-url](https://github.com/deonwaju/MainDetailApp/)>`
+1. Clone the repository: `git clone https://github.com/deonwaju/MainDetailApp`
 2. Open the project in Android Studio.
 3. Sync the project with Gradle to resolve dependencies.
 4. Run the app on an emulator or Android device.
