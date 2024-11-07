@@ -3,8 +3,9 @@ MainDetail App with MVVM clean architecture
 # Product List App
 
 A Jetpack Compose Android app for browsing and searching products. This project demonstrates a modern Android app 
-architecture with MVVM, Hilt dependency injection, Kotlin coroutines, Room Database, Datastore pref, Unit Tests and Jetpack Compose for UI. The app fetches product 
-data from a repository and displays it in a list or grid view, with search functionality for filtering products by name or color.
+architecture with MVVM, Hilt dependency injection, Kotlin coroutines, Room Database, Datastore pref, Unit Tests and Jetpack Compose 
+for UI with Compose Ui tests. The app fetches product data from a repository and displays it in a list or grid view, 
+with search functionality for filtering products by name or color.
 
 Just a brief description below:
 
@@ -54,6 +55,9 @@ The app follows **MVVM architecture** with:
 - **Retrofit**: For networking and API calls (if applicable).
 - **Material Design 3**: For modern, consistent UI elements and design patterns.
 - **Room**: For local database storage (if applicable).
+- **Datastore**: For storing key-value pairs in a data store (if applicable).
+- **Unit Tests**: For testing individual components and logic.
+- **Compose UI Tests**: For testing UI components and interactions.
 
 ## Project Structure
 
