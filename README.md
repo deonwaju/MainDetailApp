@@ -49,6 +49,10 @@ The app follows **MVVM architecture** with:
 - **Kotlin**: The primary programming language for the app.
 - **Jetpack Compose**: For building native UIs declaratively with Kotlin.
 - **MVVM Architecture**: Model-View-ViewModel architecture for better separation of concerns.
+- **Clean Architecture**: Separation of concerns with layers like domain, data, and presentation.
+- **Modular Design**: Feature-based modular organization for better scalability and maintainability.
+- **Repository Pattern**: For abstracting data sources and providing a clean API to interact with data.
+- **Single Source of Truth**: A single source of truth for data to ensure consistency and reliability.
 - **Hilt**: A modern dependency injection framework for Android apps.
 - **Coroutines**: For asynchronous programming and managing background tasks.
 - **StateFlow**: A reactive API for managing UI state in ViewModels.
