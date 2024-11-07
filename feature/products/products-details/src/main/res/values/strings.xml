@@ -6,4 +6,5 @@
     <string name="labels">Labels: %1$s</string>
     <string name="price">Price: %1$s</string>
     <string name="sizes_in_stock">In Stock Sizes: %1$s</string>
+    <string name="welcome_to_the_product_details_screen">Welcome to the Product Details Screen!</string>
 </resources>

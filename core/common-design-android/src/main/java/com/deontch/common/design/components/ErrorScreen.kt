@@ -12,12 +12,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.deontch.common.design.R
 
 @Composable
 fun ErrorScreen(
     message: String,
-    onRetry: (() -> Unit)? = null
+    onRetry: (() -> Unit)? = null,
+    text: String = stringResource(R.string.retry),
 ) {
     Box(
         contentAlignment = Alignment.Center,
@@ -34,7 +37,7 @@ fun ErrorScreen(
             if (onRetry != null) {
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(onClick = onRetry) {
-                    Text(text = "Retry")
+                    Text(text = text)
                 }
             }
         }

@@ -41,6 +41,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.deontch.common.design.components.HtmlText
+import com.deontch.common.design.components.LoadingScreen
 import com.deontch.core.common.util.toMonetaryString
 import com.deontch.core.modules.Media
 import com.deontch.feature.product.details.R
@@ -111,11 +112,11 @@ fun ProductsDetailsScreenContent(
                 when (uiState) {
                     is ProductDetailsUiState.Idle -> {
                         item {
-                            Text(text = "Welcome to the Product Details Screen!")
+                            Text(text = stringResource(R.string.welcome_to_the_product_details_screen))
                         }
                     }
 
-                    is ProductDetailsUiState.Loading -> println("Loading::;")
+                    is ProductDetailsUiState.Loading -> item { LoadingScreen() }
                     is ProductDetailsUiState.Success -> {
                         uiState.data.apply {
                             item {
